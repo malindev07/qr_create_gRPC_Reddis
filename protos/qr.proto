@@ -1,0 +1,28 @@
+syntax = 'proto3';
+
+package qr;
+
+message QR{
+  uint64 id = 1;
+  string title = 2;
+  string url = 3;
+  bool completed = 4;
+
+
+}
+
+message CreateQRRequest{
+  string title = 1;
+  string url = 2;
+  bool completed = 3;
+}
+
+
+
+message CreateQRResponse{
+  QR qr = 1;
+}
+
+service QRService{
+  rpc CreateQR(CreateQRRequest) returns (CreateQRResponse);
+}

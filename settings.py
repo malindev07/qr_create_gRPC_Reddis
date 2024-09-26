@@ -1,0 +1,1 @@
+QR_GRPC_SERVER_ADDR = "localhost:50051"
