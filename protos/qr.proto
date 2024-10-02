@@ -6,7 +6,7 @@ message QR{
   uint64 id = 1;
   string title = 2;
   string url = 3;
-  bool completed = 4;
+  //  bool completed = 4;
 
 
 }

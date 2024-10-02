@@ -2,12 +2,12 @@ from dataclasses import dataclass
 
 
 @dataclass
-class QRModelSearch:
+class QRRequestModelPydantic:
     title: str
     url: str
 
 
 @dataclass
-class QRModelReturn:
+class QRResponseModelPydantic:
     title: str
-    qr_image: str
+    qr: str

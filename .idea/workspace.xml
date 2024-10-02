@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5d8d626-679e-4557-bbf1-ff1287173df9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/QR_codes_gRPCReddis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/protos/qr.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qr_grpc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qr_models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qr_models/qr_create.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qr_models/qr_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sevices/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sevices/convert_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sevices/qr.py" afterDir="false" />
+    <list default="true" id="c5d8d626-679e-4557-bbf1-ff1287173df9" name="Changes" comment="Start making qr codes creator with gRPC and Reddis">
+      <change afterPath="$PROJECT_DIR$/py_models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/py_models/pydantic_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redis_dir/redis_connect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sevices/convert_pydantic_py.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sevices/create_qr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protos/qr.proto" beforeDir="false" afterPath="$PROJECT_DIR$/protos/qr.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qr_models/qr_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/qr_models/qr_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sevices/convert_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sevices/convert_models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,16 +43,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.qr_grpc.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "com.jetbrains.python.black.configuration.BlackFormatterConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.qr_grpc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.redis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.redis_connect.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.black.configuration.BlackFormatterConfigurable&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.qr_grpc">
+}</component>
+  <component name="RunManager" selected="Python.redis_connect">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="QR_codes_gRPCReddis" />
       <option name="ENV_FILES" value="" />
@@ -106,9 +99,55 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="redis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="QR_codes_gRPCReddis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/redis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/redis/redis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="redis_connect" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="QR_codes_gRPCReddis" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/redis_dir" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/redis_dir/redis_connect.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.redis_connect" />
         <item itemvalue="Python.qr_grpc" />
+        <item itemvalue="Python.redis" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +167,20 @@
       <option name="presentableId" value="Default" />
       <updated>1727364179578</updated>
     </task>
+    <task id="LOCAL-00001" summary="Start making qr codes creator with gRPC and Reddis">
+      <option name="closed" value="true" />
+      <created>1727384407909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727384407909</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start making qr codes creator with gRPC and Reddis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start making qr codes creator with gRPC and Reddis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
