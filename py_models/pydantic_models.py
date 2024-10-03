@@ -10,4 +10,4 @@ class QRRequestModelPydantic:
 @dataclass
 class QRResponseModelPydantic:
     title: str
-    qr: str
+    status: str

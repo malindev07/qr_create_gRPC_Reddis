@@ -1,6 +1,6 @@
 import asyncio
 
-from settings import QR_GRPC_SERVER_ADDR
+from settings.grpc_settings import QR_GRPC_SERVER_ADDR
 from sevices.qr import run_server
 
 

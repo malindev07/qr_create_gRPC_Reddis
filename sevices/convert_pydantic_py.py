@@ -9,4 +9,5 @@ async def convert_pydantic_to_py(
 
 
 async def convert_py_to_pydantic(py_model: QRModelReturn) -> QRResponseModelPydantic:
-    return QRResponseModelPydantic(title=py_model.title, qr=py_model.qr_image)
+    # print(py_model)
+    return QRResponseModelPydantic(title=py_model.title, status=py_model.status)

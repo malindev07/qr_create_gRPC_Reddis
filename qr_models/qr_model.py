@@ -10,4 +10,5 @@ class QRModelSearch:
 @dataclass
 class QRModelReturn:
     title: str
-    qr_image: str
+    url: str
+    status: str

@@ -1,7 +1,7 @@
 import grpc.aio
 from protos import qr_pb2_grpc
 
-from settings import QR_GRPC_SERVER_ADDR
+from settings.grpc_settings import QR_GRPC_SERVER_ADDR
 
 
 async def grpc_qr_client():
